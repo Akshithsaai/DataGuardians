@@ -63,6 +63,9 @@ def taxonomy(gcp_project, gcp_location, dataset_id):
     bq_policy_tagging(gcp_project, gcp_location, vertex_pi_data,dataset_id)
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
+
 
     # Configure Required Arguments
     parser = argparse.ArgumentParser(description='Data Masking')
